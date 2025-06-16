@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBSON ANDRIANARIMANGA Patrick - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #1abc9cb0;
+            --music: #e300009c;
+            --dark: #2d2e32;
+            --light: #f8f9fa;
+            --gray: #767676;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(0, 0, 0, 0.8) 80%), url('SDC11445.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text .title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: var(--music);
+            border-color: var(--music);
+        }
+
+        .btn-secondary:hover {
+            color: var(--music);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 10px;
+            border: 5px solid white;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent);
+            border-radius: 10px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::before {
+            top: -10px;
+            left: -10px;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: 10px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::after {
+            bottom: -10px;
+            right: -10px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(26, 188, 156, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(26, 188, 156, 0.1);
+            color: var(--accent);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .exp-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.1);
+        }
+
+        .exp-date {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .exp-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background: rgba(26, 188, 156, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .project-links a i {
+            margin-right: 5px;
+        }
+
+        /* Drum Pad Section */
+        .drum-section {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .drum-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .drum-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--music);
+        }
+
+        .drum-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .drum-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .drum-pad button {
+            height: 100px;
+            background: var(--music);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.1s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drum-pad button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .drum-pad button:hover {
+            background: #e300009c;
+        }
+
+        .drum-pad button.active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background: #e300009c;
+        }
+
+        .drum-pad button.active::after {
+            opacity: 1;
+        }
+
+        .drum-pad button span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        .drum-instruction {
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(26, 188, 156, 0.05) 100%);
+            border-radius: 15px;
+            padding: 40px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.85);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design Improvements */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 30px auto 0;
+            }
+            
+            .info-item {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Header improvements */
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            /* Mobile menu */
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+            }
+            
+            /* Hero section */
+            .hero {
+                padding: 130px 0 50px;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            .hero-text .title {
+                font-size: 1.1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            /* Sections */
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* About section */
+            .about-content {
+                padding: 25px;
+            }
+            
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+            
+            /* Grid improvements */
+            .skills-grid,
+            .exp-grid,
+            .projects-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Drum pad */
+            .drum-section {
+                padding: 25px;
+            }
+            
+            .drum-title {
+                font-size: 1.5rem;
+            }
+            
+            .drum-pad {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .drum-pad button {
+                height: 80px;
+                font-size: 1.2rem;
+            }
+            
+            /* Contact */
+            .contact-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            /* Footer */
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .footer-links li {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Very small screens */
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .about-image img {
+                max-width: 200px;
+            }
+            
+            .drum-pad {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .drum-pad button {
+                height: 70px;
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .contact-info {
+                padding: 20px;
+            }
+        }
+        
+        /* Mobile menu icon animation */
+        .mobile-menu i {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active i {
+            transform: rotate(90deg);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Button enhancements */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        /* Card hover effects */
+        .exp-card, .project-card, .skill-category {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .exp-card:hover, .project-card:hover, .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Accessibility focus */
+        button:focus, a:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">ROBSON <span>Patrick</span></a>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À Propos</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="title">Ingénieur Réseau & Système | Développeur Fullstack JS</span>
+                    <h1>ROBSON ANDRIANARIMANGA <span>Patrick</span></h1>
+                    <p>Professionnel passionné par les infrastructures réseau, l'administration système et la sécurité informatique, avec une expertise en développement d'applications web innovantes.</p>
+                    <div class="hero-btns">
+                        <a href="#projets" class="btn">Voir mes projets</a>
+                        <a href="#drum" class="btn btn-secondary">Essayer mon DrumPad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos de Moi</h2>
+                <p>Un aperçu de mon parcours professionnel</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="robson_patrick_pdp.jpg" alt="Patrick Robson">
+                </div>
+                <div class="about-text">
+                    <h3>Expert en Réseaux & Développement Web</h3>
+                    <p>Je suis un ingénieur réseau et système passionné, spécialisé dans la conception et la gestion d'infrastructures réseau sécurisées. Mon expertise s'étend également au développement Fullstack JavaScript où je crée des solutions web innovantes.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Antananarivo, Madagascar</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>dev.patri.ckrobson@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+261 34 40 787 16</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4>Certifications</h4>
+                                <p>CCNA, Ethical Hacker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Compétences</h2>
+                <p>Domaines d'expertise et technologies maîtrisées</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> Réseaux & Télécom</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Cisco</span>
+                        <span class="skill-tag">MikroTik</span>
+                        <span class="skill-tag">LAN/WAN</span>
+                        <span class="skill-tag">VLAN</span>
+                        <span class="skill-tag">VPN</span>
+                        <span class="skill-tag">Firewall</span>
+                        <span class="skill-tag">Sécurité informatique</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Administration Système</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Gestion des utilisateurs</span>
+                        <span class="skill-tag">Datacenter</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Développement Fullstack</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">API REST</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Virtualisation</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">VMware</span>
+                        <span class="skill-tag">Serveurs Dédiés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <!--
+	<section class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Expérience Professionnelle</h2>
+                <p>Mon parcours professionnel en bref</p>
+            </div>
+            <div class="exp-grid">
+                <div class="exp-card">
+                    <div class="exp-date">2016 - Présent</div>
+                    <h3 class="exp-title">IT Manager</h3>
+                    <div class="exp-company">Genius Technology Company</div>
+                    <p>Supervision de la plateforme LITS Mada et optimisation des infrastructures.</p>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-date">2017 - Présent</div>
+                    <h3 class="exp-title">Responsable Système d'Information</h3>
+                    <div class="exp-company">Inspection Générale de l'Etat</div>
+                    <p>Gestion de l'infrastructure réseau de l'organisme.</p>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-date">2019 - 2020</div>
+                    <h3 class="exp-title">Développeur JS Fullstack</h3>
+                    <div class="exp-company">Genius Technology Company</div>
+                    <p>Développement d'applications de gestion et de géolocalisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	-->
+
+    <!-- Projects Section -->
+    <section id="projets" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Projets</h2>
+                <p>Applications et systèmes que j'ai développés</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="puceomby.jpg" alt="Géolocalisation">
+                        <span class="project-badge" style="background: var(--accent);">Géolocalisation</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Système de Géolocalisation</h3>
+                        <p>Application pour l'identification et la géolocalisation des bovidés à Madagascar avec bolus électroniques.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="network-notepad.jpeg" alt="Gestion d'Infrastructure">
+                        <span class="project-badge" style="background: var(--secondary);">Réseau</span>
+                    </div>
+                    <div class="project-content">
+                        <h3><a style="color: black" target="_blank" href="https://pcknetadmin.vercel.app" >Gestion d'Infrastructure</a></h3>
+                        <p>Plateforme d'aide à la conception de robuste infrastructure réseau pour les entreprises et particuliers.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">SNMP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" id="drum">
+                    <div class="project-image">
+                        <img src="tsimbazaza.png" alt="Tsimbazaza m'mozika">
+                        <span class="project-badge" style="background: var(--music);">Jeu Musical</span>
+                    </div>
+                    <div class="project-content">
+                        <h3><a style="color: black" target="_blank" href="https://tsimbazazammozika.vercel.app">Tsimbazaza m'mozika</a></h3>
+                        <p>Application web interactive de DrumPad permettant de jouer des beats légendaire en ligne.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drum Pad Section -->
+            <div class="drum-section">
+                <div class="drum-container">
+                    <h3 class="drum-title">Tsimbazaza m'mozika</h3>
+                    <p class="drum-subtitle">Créez vos propres beats avec ce DrumPad interactif</p>
+                    
+                    <div class="drum-pad">
+                        <!-- Rangée supérieure : 7, 8, 9 -->
+                        <button data-key="7" data-sound="fx">
+                            7
+                        </button>
+                        <button data-key="8" data-sound="perc2">
+                            8
+                        </button>
+                        <button data-key="9" data-sound="perc1">
+                            9
+                        </button>
+                        
+                        <!-- Rangée du milieu : 4, 5, 6 -->
+                        <button data-key="4" data-sound="cymbal">
+                            4
+                        </button>
+                        <button data-key="5" data-sound="tom">
+                            5
+                        </button>
+                        <button data-key="6" data-sound="clap">
+                            6
+                        </button>
+                        
+                        <!-- Rangée inférieure : 1, 2, 3 -->
+                        <button data-key="1" data-sound="kick">
+                            1
+                        </button>
+                        <button data-key="2" data-sound="snare">
+                            2
+                        </button>
+                        <button data-key="3" data-sound="hihat">
+                            3
+                        </button>
+                    </div>
+                    
+                    <p class="drum-instruction">Utilisez les touches 1-9 de votre clavier (pavé numérique inclus) pour jouer</p>
+                    <a href="https://tsimbazazammozika.vercel.app" target="_blank" class="btn btn-secondary" style="margin-top: 20px;">
+                        <i class="fas fa-external-link-alt"></i> Voir la version complète
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galerie de Mes Réalisations</h2>
+                <p>Explorez mes projets à travers ces captures d'écran</p>
+            </div>
+            
+            <div class="gallery-grid">
+			
+                <div class="gallery-item" onclick="openLightbox('datacenter2.jpg', 'Datacenter - NOC')">
+                    <img src="datacenter2.jpg" alt="Datacenter - NOC">
+                    <div class="gallery-overlay">
+                        <h4>Avant et après réaménagement pour usage de Datacenter</h4>
+                        <p>Salle de contrôle - NOC </p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('datacenter3.jpg', 'Datacenter - Salle blanche')">
+                    <img src="datacenter3.jpg" alt="Datacenter - Salle Blanche">
+                    <div class="gallery-overlay">
+                        <h4>Avant et après réaménagement pour usage de Datacenter</h4>
+                        <p>Pose de carreaux de sol avant la plancher surélevé </p>
+                    </div>
+                </div>
+ 
+                <div class="gallery-item" onclick="openLightbox('datacenter1.jpg', 'Datacenter - Salle blanche')">
+                    <img src="datacenter1.jpg" alt="Datacenter - Salle Blanche">
+                    <div class="gallery-overlay">
+                        <h4>Avant et après réaménagement pour usage de Datacenter</h4>
+                        <p>Baie de brassage et Système de detection d'incendie avec déclenchement automatique </p>
+                    </div>
+                </div>
+ 
+                <div class="gallery-item" onclick="openLightbox('datacenter4.jpg', 'Datacenter - Porte blindé')">
+                    <img src="datacenter4.jpg" alt="Datacenter - Porte blindé">
+                    <div class="gallery-overlay">
+                        <h4>Système de sécurité</h4>
+                        <p>Pose de porte blindé pour renforcer la sécurité physique du système </p>
+                    </div>
+                </div>
+ 
+                 <div class="gallery-item" onclick="openLightbox('Antenne2.jpg', 'Intervention sur terrain')">
+                    <img src="Antenne2.jpg" alt="Intervention sur terrain">
+                    <div class="gallery-overlay">
+                        <h4>Intervention sur terrain</h4>
+                        <p>Configuration et maintenance d'une antenne Airmax reliant le site central et un site de replication </p>
+                    </div>
+                </div>
+ 
+  
+                 <div class="gallery-item" onclick="openLightbox('Antenne1.jpg', 'Intervention sur terrain')">
+                    <img src="Antenne1.jpg" alt="Intervention sur terrain">
+                    <div class="gallery-overlay">
+                        <h4>Intervention sur terrain</h4>
+                        <p>Configuration et ajout d'un point d'accès WiFi sur un switch HPE Office Connect dans un site distant </p>
+                    </div>
+                </div>
+ 
+                <div class="gallery-item" onclick="openLightbox('depannage.jpg', 'Intervention sur terrain')">
+                    <img src="depannage.jpg" alt="Intervention sur terrain">
+                    <div class="gallery-overlay">
+                        <h4>Intervention sur terrain</h4>
+                        <p>Dépannage hardware, mise à jour bios et système d'exploitation</p>
+                    </div>
+                </div>
+ 
+                <div class="gallery-item" onclick="openLightbox('MVIMG_20230918_110725.jpg', 'Système de Géolocalisation')">
+                    <img src="MVIMG_20230918_110725.jpg" alt="Système de Géolocalisation">
+                    <div class="gallery-overlay">
+                        <h4>Système de Géolocalisation</h4>
+                        <p>Application de suivi des bovidés</p>
+                    </div>
+                </div> 
+ 
+  
+                <div class="gallery-item" onclick="openLightbox('IMG_20190702_090123.jpg', 'OMBY Mad-io')">
+                    <img src="IMG_20190702_090123.jpg" alt="OMBY Mad-io">
+                    <div class="gallery-overlay">
+                        <h4>OMBY Mad-io</h4>
+                        <p>Formation sur l'utilisation du plateforme et insertion de puce électronique de bovin à Morondava</p>
+                    </div>
+                </div> 
+ 
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80', 'Gestion d\'Infrastructure')">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Gestion d'Infrastructure">
+                    <div class="gallery-overlay">
+                        <h4>Gestion d'Infrastructure</h4>
+                        <p>Plateforme d'aide réseaux et systèmes</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openLightbox('captsimbazaza.png', 'Tsimbazaza m\'mozika')">
+                    <img src="captsimbazaza.png" alt="Tsimbazaza m'mozika">
+                    <div class="gallery-overlay">
+                        <h4>Tsimbazaza m'mozika</h4>
+                        <p>Application musicale interactive</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" onclick="openLightbox('IMG_20230918_131839.jpg', 'Système de Traçabilité')">
+                    <img src="IMG_20230918_131839.jpg" alt="Système de Traçabilité">
+                    <div class="gallery-overlay">
+                        <h4>Système de Traçabilité</h4>
+                        <p>Plateforme LITS Mada</p>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" class="lightbox-content">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-moi</h2>
+                <p>Disponible pour des collaborations et nouveaux projets</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Coordonnées</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Localisation</h4>
+                            <p>Tsarafaritra Tsimbazaza, Antananarivo, Madagascar</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:dev.patri.ckrobson@gmail.com">dev.patri.ckrobson@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Téléphone</h4>
+                            <a href="tel:+261344078716">+261 34 40 787 16</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/patrick-robson-andrianarimanga-17297bab/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a href="#" class="social-link"><i class="fab fa-github"></i></a> -->
+                        <a href="https://www.facebook.com/robson.a.patrick" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Disponibilité</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horaires de travail</h4>
+                            <p>Lundi - Vendredi: 8h00 - 18h00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Types de projets</h4>
+                            <p>Etude et conception d'infrastructure réseau, Développement web, applications, </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Zone d'intervention</h4>
+                            <p>Antananarivo et environs, travail à distance possible</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Contact rapide</h4>
+                            <p>N'hésitez pas à m'envoyer un email ou à m'appeler directement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <ul class="footer-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À Propos</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="copyright">© 2025 ROBSON ANDRIANARIMANGA Patrick. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Fermer le menu en cliquant à l'extérieur
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Drum Pad functionality
+        const drumPad = document.querySelector('.drum-pad');
+        
+        // Sons pour le DrumPad
+        const sounds = {
+            kick: new Audio('default/tomMid.mp3'),
+            snare: new Audio('default/tomLow.mp3'),
+            hihat: new Audio('default/crash.mp3'),
+            clap: new Audio('default/tomHigh.mp3'),
+            tom: new Audio('default/Ride.mp3'),
+            cymbal: new Audio('default/openHat.mp3'),
+            perc1: new Audio('default/snare.mp3'),
+            perc2: new Audio('default/closeHat.mp3'),
+            fx: new Audio('default/kick.mp3')
+        };
+        
+        // Précharger les sons
+        Object.values(sounds).forEach(sound => {
+            sound.volume = 0.7;
+        });
+        
+        // Gestion des clics sur les pads
+        drumPad.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const soundType = e.target.dataset.sound;
+                playSound(soundType);
+                animateButton(e.target);
+            }
+        });
+        
+        // Jouer un son
+        function playSound(soundType) {
+            sounds[soundType].currentTime = 0;
+            sounds[soundType].play();
+        }
+        
+        // Animation du bouton
+        function animateButton(button) {
+            button.classList.add('active');
+            setTimeout(() => {
+                button.classList.remove('active');
+            }, 100);
+        }
+        
+        // Gestion des touches du clavier (pavé numérique inclus)
+        document.addEventListener('keydown', (e) => {
+            const keyMap = {
+                '1': 'kick',
+                '2': 'snare',
+                '3': 'hihat',
+                '4': 'cymbal',
+                '5': 'tom',
+                '6': 'clap',
+                '7': 'fx',
+                '8': 'perc2',
+                '9': 'perc1',
+                'Numpad1': 'kick',
+                'Numpad2': 'snare',
+                'Numpad3': 'hihat',
+                'Numpad4': 'cymbal',
+                'Numpad5': 'tom',
+                'Numpad6': 'clap',
+                'Numpad7': 'fx',
+                'Numpad8': 'perc2',
+                'Numpad9': 'perc1'
+            };
+            
+            if (keyMap[e.key]) {
+                playSound(keyMap[e.key]);
+                const button = document.querySelector(`button[data-key="${e.key.replace('Numpad', '')}"]`);
+                if (button) animateButton(button);
+            }
+        });
+        
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        function openLightbox(src, alt) {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fermer la lightbox en cliquant à l'extérieur de l'image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Fermer la lightbox avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
